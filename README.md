@@ -21,3 +21,4 @@ Un sensore di temperatura/umindità Si7021 su break-board con protocollo I2C
 Il display presente nel kit è un ILI.9341 con touch resistivo, con una risoluzione di 320x200 ed interfaccia SPI e viene pilotato tramite la libreria Arduino TFT_eSPI, una tra le più veloci e performanti per micro-controllori ESP.
 
 Qui sotto uno schema elettrico dei collegamenti dei componenti aggiuntivi da me aggiunti, in quanto lo schema dei collegamenti del display e del cicalino è presente nella documentazione PDF del kit AZ-Delivery.
+![Home Screen](./sample_pictures/Schematics.jpg)
