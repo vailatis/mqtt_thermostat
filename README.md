@@ -31,3 +31,6 @@ Qui sotto alcuni links al materiale che ho utilizzato. Non sono per nulla affili
 - [Kit Contenitore+Display](https://amzn.eu/d/6OSxUhz)
 - [BreakBoard DS.3231](https://amzn.eu/d/7noOq9g)
 - [BreakBoard Si.7021](https://amzn.eu/d/eylJAoo)
+- [Relè 5V SPST miniatura](https://it.rs-online.com/web/p/rele-di-segnale/8154893)
+- Resistenza 2,2Kohm 1/4 watt 5%
+- Transistor NPN tipo BC.337/BC.537 o similari
