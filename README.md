@@ -46,7 +46,10 @@ La prima compilazione deve avvenire collegando l'ESP-32 tramite cavo USB al PC, 
 
 # Aggiornamenti firmware
 Il firmware ricerca per default un file di testo dal nome "**MQTT-THERMOSTAT.version**" su un webserver configurabile all'interno del firmware. Tale file conterrà il numero di versione del firmware disponibile (formato **x.xx**). Se tale versione risulta essere superiore a quella caricata all'interno del termostato, verrà scaricato il nuovo firmware dal webserver, che dovrà avere come formato del nome file "**MQTT-THERMOSTAT_x.xx.bin**".
+
 Nel caso il file non venga trovato, il termostato segnalerà l'errore di aggiornamento e proseguira con le sue normali funzionalità di termostato senza bloccarsi.
 Il check viene fatto in maniera silente dal termostato ogni 10 minuti (viene segnalato dall'icona in alto a sinistra "**UPDT**" che si illumina durante il check); nel caso venga trovato un aggiornamento, compare sulle schermo un popup che indica la versione firmware corrente e quella trovata, ed una barra percentuale che segnala l'avanzamento del download. Al termine dell'aggiornamento, il termostato si riavierà automaticamente con la nuova versione di firmware.
+
 **Ricordarsi all'interno del sorgente di aggiornare la versione di firmware, prima di compilarlo, in quanto la variabile di versione viene utilizzata per confrontarla con la versione trovata sul server web per determinare se ci sono aggiornamenti, e di conseguente, aggiornare anche il file "**MQTT-THERMOSTAT.version**" con lo stesso numero di versione.**
+
 Il nuovo firmware può essere compilato dal menu "**Sketch --> Export compiled binary**", che produrrà sul disco del PC il nuovo firmware, che andrà rinominato nel formato "MQTT-THERMOSTAT_**x.xx.bin**" ovvero con il numero di versione all'interno del nome file.
