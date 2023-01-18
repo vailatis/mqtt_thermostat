@@ -34,3 +34,19 @@ Qui sotto alcuni links al materiale che ho utilizzato. Non sono per nulla affili
 - [Relè 5V SPST miniatura](https://it.rs-online.com/web/p/rele-di-segnale/8154893)
 - Resistenza 2,2Kohm 1/4 watt 5%
 - Transistor NPN tipo BC.337/BC.537 o similari
+
+# Compilazione
+Nella cartella **firmware** sono presenti i files da compilare tramite Arduino IDE.
+Per una corretta compilazione, occore importare nella libreria TFT_eSPI il file di customizzazione del pin-out del display, presente nella cartella **TFT_eSPI\User_Setups** e selezionarlo dalla libreria.
+All'interno del sorgente firmware, è presente uuna sezione di cofnigurazione, in cui è possibile pre-configurare i defaults, come ad esempio le temperature pre-impostate, il crono-programma, la URL di default a cui puntare per controllare gli aggiornamenti firmware ed il topic MQTT utilizzato per la pubblicazione dei dati.
+
+Il firmware in automatico ricava il Mac-Address dell'ESP32 e lo utilizza per identificarsi sulla rete e sui topics MQTT con un ID univoco, in modo che se sono presenti più termostati, ogniuno abbia un identificativo univoco (un po come avviene anche con gli Shelly o altri prodotti basati si ESP).
+
+La prima compilazione deve avvenire collegando l'ESP-32 tramite cavo USB al PC, mentre i successivi aggiornamenti possono essere fatti via OTA-HTTP senza dover smontare ogni volta il termostato.
+
+# Aggiornamenti firmware
+Il firmware ricerca per default un file di testo dal nome "**MQTT-THERMOSTAT.version**" su un webserver configurabile all'interno del firmware. Tale file conterrà il numero di versione del firmware disponibile (formato **x.xx**). Se tale versione risulta essere superiore a quella caricata all'interno del termostato, verrà scaricato il nuovo firmware dal webserver, che dovrà avere come formato del nome file "**MQTT-THERMOSTAT_x.xx.bin**".
+Nel caso il file non venga trovato, il termostato segnalerà l'errore di aggiornamento e proseguira con le sue normali funzionalità di termostato senza bloccarsi.
+Il check viene fatto in maniera silente dal termostato ogni 10 minuti (viene segnalato dall'icona in alto a sinistra "**UPDT**" che si illumina durante il check); nel caso venga trovato un aggiornamento, compare sulle schermo un popup che indica la versione firmware corrente e quella trovata, ed una barra percentuale che segnala l'avanzamento del download. Al termine dell'aggiornamento, il termostato si riavierà automaticamente con la nuova versione di firmware.
+**Ricordarsi all'interno del sorgente di aggiornare la versione di firmware, prima di compilarlo, in quanto la variabile di versione viene utilizzata per confrontarla con la versione trovata sul server web per determinare se ci sono aggiornamenti, e di conseguente, aggiornare anche il file "**MQTT-THERMOSTAT.version**" con lo stesso numero di versione.**
+Il nuovo firmware può essere compilato dal menu "**Sketch --> Export compiled binary**", che produrrà sul disco del PC il nuovo firmware, che andrà rinominato nel formato "MQTT-THERMOSTAT_**x.xx.bin**" ovvero con il numero di versione all'interno del nome file.
