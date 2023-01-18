@@ -1,0 +1,19 @@
+climate:
+  - name: Termostato Taverna
+    modes:
+      - "off"
+      - "heat"
+      - "auto"
+      - "dry"
+    precision: 0.1
+    min_temp: 9
+    max_temp: 30
+    temp_step: 0.5
+    current_temperature_topic: "/domotica/thermostat/F3A3EC/temp"
+    action_topic: "/domotica/thermostat/F3A3EC/status"
+    mode_state_topic: "/domotica/thermostat/F3A3EC/mode"
+    mode_state_template: "{{ 'dry' if value=='holiday' else value }}"
+    temperature_state_topic: "/domotica/thermostat/F3A3EC/setpoint"
+    mode_command_topic: "/domotica/thermostat/F3A3EC/set/mode"
+    mode_command_template: "{{ 'holiday' if value=='dry' else value }}"
+    temperature_command_topic: "/domotica/thermostat/F3A3EC/set/setpoint"
