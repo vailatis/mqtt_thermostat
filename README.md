@@ -55,3 +55,7 @@ Al termine dell'aggiornamento, il termostato si riavierà automaticamente con la
 **Ricordarsi all'interno del sorgente di aggiornare la versione di firmware, prima di compilarlo, in quanto la variabile di versione viene utilizzata per confrontarla con la versione trovata sul server web per determinare se ci sono aggiornamenti, e di conseguente, aggiornare anche il file "**MQTT-THERMOSTAT.version**" con lo stesso numero di versione.**
 
 Il nuovo firmware può essere compilato dal menu "**Sketch --> Export compiled binary**", che produrrà sul disco del PC il nuovo firmware, che andrà rinominato nel formato "MQTT-THERMOSTAT_**x.xx.bin**" ovvero con il numero di versione all'interno del nome file.
+
+# Struttura MQTT dei messaggi
+Qui sotto la struttura dei messaggi MQTT che il termostato invia:
+![MQTT Data Structure Screen](./sample_pictures/MQTT_DataStructure.jpg)
