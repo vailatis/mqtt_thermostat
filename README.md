@@ -1,4 +1,4 @@
-# mqtt_thermostat
+# Introduzione
 A complete standalone chrono-thermostat able to communicate via MQTT over WiFi
 
 Questo progetto nasce dalla necessità di avere un termostato per casa non solo capace di poter accendere e spegnere la caldaia al raggiungimento di una  temperatura impostabile, ma anche di poter gestire le varie temperatune nelle varie fasce orarie, giorno per giorno.
@@ -20,5 +20,14 @@ Un sensore di temperatura/umindità Si7021 su break-board con protocollo I2C
 
 Il display presente nel kit è un ILI.9341 con touch resistivo, con una risoluzione di 320x200 ed interfaccia SPI e viene pilotato tramite la libreria Arduino TFT_eSPI, una tra le più veloci e performanti per micro-controllori ESP.
 
+# Schema Elettrico
 Qui sotto uno schema elettrico dei collegamenti dei componenti aggiuntivi da me aggiunti, in quanto lo schema dei collegamenti del display e del cicalino è presente nella documentazione PDF del kit AZ-Delivery.
 ![Home Screen](./sample_pictures/Schematics.jpg)
+
+
+# Materiale e riferimenti
+Qui sotto alcuni links al materiale che ho utilizzato. Non sono per nulla affiliato ai fornitori di questi materiali, li ho inseriti solamente come riferimento per gli oggetti che ho personalmente utilizzato e per tutti quelli che non hanno voglia di cercare i componenti:
+
+- [Kit Contenitore+Display](https://amzn.eu/d/6OSxUhz)
+- [BreakBoard DS.3231](https://amzn.eu/d/7noOq9g)
+- [BreakBoard Si.7021](https://amzn.eu/d/eylJAoo)
